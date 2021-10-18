@@ -392,7 +392,7 @@ public class FrmQuiz extends javax.swing.JInternalFrame {
     }
 
     private void disableAnswerButtons() {
-        //Desabilita os botões de responsta
+        //Desabilita os botões de resposta
         btnA.setEnabled(false);
         btnB.setEnabled(false);
         btnC.setEnabled(false);

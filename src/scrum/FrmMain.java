@@ -1,6 +1,8 @@
 package scrum;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
+import java.net.URI;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
@@ -70,11 +72,11 @@ public class FrmMain extends javax.swing.JFrame {
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jblLinkVideo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         menuArchive = new javax.swing.JMenu();
         mnuArchiveRegistrationQuiz = new javax.swing.JMenuItem();
-        menuHelp = new javax.swing.JMenu();
+        menuInfo = new javax.swing.JMenu();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -96,8 +98,9 @@ public class FrmMain extends javax.swing.JFrame {
 
         btnStartQuiz.setBackground(new java.awt.Color(102, 102, 102));
         btnStartQuiz.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
-        btnStartQuiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-start.png"))); // NOI18N
+        btnStartQuiz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-start-quiz.png"))); // NOI18N
         btnStartQuiz.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStartQuiz.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnStartQuiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnStartQuizActionPerformed(evt);
@@ -109,6 +112,12 @@ public class FrmMain extends javax.swing.JFrame {
         lblSprintPlanningTxt.setText("Planejamento da Sprint");
 
         lblLamp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-lamp_64px.png"))); // NOI18N
+        lblLamp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblLamp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLampMouseClicked(evt);
+            }
+        });
 
         lblProductBacklog.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-backlog _128px.png"))); // NOI18N
         lblProductBacklog.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -119,9 +128,21 @@ public class FrmMain extends javax.swing.JFrame {
         });
 
         lblSprintPlanning.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-sprint-planning_128px.png"))); // NOI18N
+        lblSprintPlanning.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSprintPlanning.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSprintPlanningMouseClicked(evt);
+            }
+        });
 
         lblSprint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-sprint.png"))); // NOI18N
+        lblSprint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSprint.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        lblSprint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSprintMouseClicked(evt);
+            }
+        });
 
         lblProductOwner.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-product_owner_128px.png"))); // NOI18N
         lblProductOwner.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -134,8 +155,20 @@ public class FrmMain extends javax.swing.JFrame {
         lblScrumMaster.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-64px.png"))); // NOI18N
 
         lblProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-product.png"))); // NOI18N
+        lblProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblProduct.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProductMouseClicked(evt);
+            }
+        });
 
         lblBacklogSprint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-backlog-sprint.png"))); // NOI18N
+        lblBacklogSprint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBacklogSprint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBacklogSprintMouseClicked(evt);
+            }
+        });
 
         lblProductOwner2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-product_owner_64px.png"))); // NOI18N
 
@@ -168,12 +201,30 @@ public class FrmMain extends javax.swing.JFrame {
         lblRetrospectiveSprintTxt.setText("Retrospectiva Sprint");
 
         lblReviewSprint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-review-sprint.png"))); // NOI18N
+        lblReviewSprint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblReviewSprint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblReviewSprintMouseClicked(evt);
+            }
+        });
 
         lblRetrospectiveSprint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-retrospective_64px.png"))); // NOI18N
+        lblRetrospectiveSprint.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblRetrospectiveSprint.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblRetrospectiveSprintMouseClicked(evt);
+            }
+        });
 
         lblDaily.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblDaily.setForeground(new java.awt.Color(255, 255, 255));
         lblDaily.setText("Reunião diária");
+        lblDaily.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDaily.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDailyMouseClicked(evt);
+            }
+        });
 
         lblProductTxt.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblProductTxt.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,11 +238,11 @@ public class FrmMain extends javax.swing.JFrame {
 
         lblDevelopers3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_32px.png"))); // NOI18N
 
-        lblScrumMaster3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-64px.png"))); // NOI18N
+        lblScrumMaster3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-32px.png"))); // NOI18N
 
         lblDevelopers2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_64px.png"))); // NOI18N
 
-        lblDevelopers5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_64px.png"))); // NOI18N
+        lblDevelopers5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_32px.png"))); // NOI18N
 
         lblProductOwner3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-product_owner_64px.png"))); // NOI18N
 
@@ -199,15 +250,33 @@ public class FrmMain extends javax.swing.JFrame {
 
         lblScrumMaster2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-32px.png"))); // NOI18N
 
-        lblScrumMaster4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-64px.png"))); // NOI18N
+        lblScrumMaster4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-32px.png"))); // NOI18N
 
-        lblDevelopers4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_64px.png"))); // NOI18N
+        lblDevelopers4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_32px.png"))); // NOI18N
 
         lblProductOwner6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-product_owner_64px.png"))); // NOI18N
+        lblProductOwner6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblProductOwner6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblProductOwner6MouseClicked(evt);
+            }
+        });
 
         lblScrumMaster5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-scrum-master-64px.png"))); // NOI18N
+        lblScrumMaster5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblScrumMaster5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblScrumMaster5MouseClicked(evt);
+            }
+        });
 
         lblDevelopers6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-developers_64px.png"))); // NOI18N
+        lblDevelopers6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblDevelopers6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblDevelopers6MouseClicked(evt);
+            }
+        });
 
         jLabel38.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,7 +290,13 @@ public class FrmMain extends javax.swing.JFrame {
         jLabel40.setForeground(new java.awt.Color(255, 255, 255));
         jLabel40.setText("Developers");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-youtube.png"))); // NOI18N
+        jblLinkVideo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-youtube.png"))); // NOI18N
+        jblLinkVideo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jblLinkVideo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jblLinkVideoMouseClicked(evt);
+            }
+        });
 
         dpnDesk.setLayer(btnStartQuiz, javax.swing.JLayeredPane.DEFAULT_LAYER);
         dpnDesk.setLayer(lblSprintPlanningTxt, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -264,7 +339,7 @@ public class FrmMain extends javax.swing.JFrame {
         dpnDesk.setLayer(jLabel38, javax.swing.JLayeredPane.DEFAULT_LAYER);
         dpnDesk.setLayer(jLabel39, javax.swing.JLayeredPane.DEFAULT_LAYER);
         dpnDesk.setLayer(jLabel40, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        dpnDesk.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        dpnDesk.setLayer(jblLinkVideo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout dpnDeskLayout = new javax.swing.GroupLayout(dpnDesk);
         dpnDesk.setLayout(dpnDeskLayout);
@@ -289,16 +364,17 @@ public class FrmMain extends javax.swing.JFrame {
                                         .addComponent(lblLamp)))
                                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(dpnDeskLayout.createSequentialGroup()
-                                        .addGap(36, 36, 36)
-                                        .addComponent(lblProductBacklog, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48)
-                                        .addComponent(lblArrow2))
-                                    .addGroup(dpnDeskLayout.createSequentialGroup()
                                         .addGap(69, 69, 69)
-                                        .addComponent(lblProductOwner2))))
+                                        .addComponent(lblProductOwner2))
+                                    .addGroup(dpnDeskLayout.createSequentialGroup()
+                                        .addGap(218, 218, 218)
+                                        .addComponent(lblArrow2)))
+                                .addGap(11, 11, 11))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblProductBacklogTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblProductBacklog, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblProductBacklogTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(85, 85, 85)))
                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(dpnDeskLayout.createSequentialGroup()
@@ -327,25 +403,50 @@ public class FrmMain extends javax.swing.JFrame {
                                         .addComponent(lblBacklogSprintTxt)
                                         .addGap(37, 37, 37))))))
                     .addGroup(dpnDeskLayout.createSequentialGroup()
-                        .addGap(200, 200, 200)
-                        .addComponent(btnStartQuiz)
-                        .addGap(31, 31, 31)
-                        .addComponent(jLabel1)
+                        .addGap(145, 145, 145)
+                        .addComponent(btnStartQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jblLinkVideo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(dpnDeskLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
+                        .addGap(212, 212, 212)
+                        .addComponent(lblDevelopers2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(dpnDeskLayout.createSequentialGroup()
+                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblSprint)
+                            .addGroup(dpnDeskLayout.createSequentialGroup()
+                                .addGap(78, 78, 78)
+                                .addComponent(lblSprintTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(dpnDeskLayout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(lblProductOwner6))
-                            .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lblProductOwner5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblScrumMaster2))
                             .addGroup(dpnDeskLayout.createSequentialGroup()
+                                .addGap(33, 33, 33)
+                                .addComponent(lblDevelopers3))
+                            .addGroup(dpnDeskLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(lblReviewSprint))
+                            .addGroup(dpnDeskLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblReviewSprintTxt))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblRetrospectiveSprintTxt)
-                                .addGap(143, 143, 143))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, dpnDeskLayout.createSequentialGroup()
+                                .addGap(81, 81, 81))))
+                    .addGroup(dpnDeskLayout.createSequentialGroup()
+                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(dpnDeskLayout.createSequentialGroup()
+                                .addGap(155, 155, 155)
+                                .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(dpnDeskLayout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(lblProductOwner6))
+                                    .addComponent(jLabel39, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(dpnDeskLayout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -371,44 +472,13 @@ public class FrmMain extends javax.swing.JFrame {
                                             .addGap(130, 130, 130)
                                             .addComponent(lblRetrospectiveSprint)
                                             .addGap(41, 41, 41)
-                                            .addComponent(lblProduct))))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblProduct)))))
                             .addGroup(dpnDeskLayout.createSequentialGroup()
-                                .addGap(27, 27, 27)
+                                .addGap(54, 54, 54)
                                 .addComponent(lblScrumMaster3)
-                                .addGap(45, 45, 45)
-                                .addComponent(lblDevelopers4))
-                            .addGroup(dpnDeskLayout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(lblSprintTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                        .addComponent(lblSprint)
-                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(dpnDeskLayout.createSequentialGroup()
-                                .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                                        .addGap(10, 10, 10)
-                                        .addComponent(lblProductOwner5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblScrumMaster2))
-                                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addComponent(lblDevelopers3))
-                                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblReviewSprint)))
-                                .addGap(268, 268, 268))
-                            .addGroup(dpnDeskLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblReviewSprintTxt)
-                                .addGap(20, 20, 20))))
-                    .addGroup(dpnDeskLayout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(lblDevelopers2)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(lblDevelopers4)))
+                        .addContainerGap())))
             .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
                     .addContainerGap(925, Short.MAX_VALUE)
@@ -442,13 +512,10 @@ public class FrmMain extends javax.swing.JFrame {
                                     .addGroup(dpnDeskLayout.createSequentialGroup()
                                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(dpnDeskLayout.createSequentialGroup()
-                                                .addGap(143, 143, 143)
-                                                .addComponent(lblArrow2))
-                                            .addGroup(dpnDeskLayout.createSequentialGroup()
                                                 .addGap(40, 40, 40)
                                                 .addComponent(lblProductOwner4))
                                             .addGroup(dpnDeskLayout.createSequentialGroup()
-                                                .addGap(40, 40, 40)
+                                                .addGap(24, 24, 24)
                                                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                     .addComponent(lblProductBacklog, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(dpnDeskLayout.createSequentialGroup()
@@ -461,7 +528,11 @@ public class FrmMain extends javax.swing.JFrame {
                                                                 .addGap(66, 66, 66)
                                                                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                     .addComponent(lblBacklogSprint)
-                                                                    .addComponent(lblArrow3))))))))
+                                                                    .addComponent(lblArrow3)))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(lblArrow2)
+                                                                .addGap(43, 43, 43)))))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(lblProductBacklogTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -482,8 +553,8 @@ public class FrmMain extends javax.swing.JFrame {
                                         .addComponent(lblArrow1)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblSprintTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(18, 18, 18)
+                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblScrumMaster3)
                             .addComponent(lblDevelopers4)))
                     .addGroup(dpnDeskLayout.createSequentialGroup()
@@ -508,7 +579,7 @@ public class FrmMain extends javax.swing.JFrame {
                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblScrumMaster4)
                             .addComponent(lblDevelopers5))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
                         .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -528,11 +599,10 @@ public class FrmMain extends javax.swing.JFrame {
                                         .addComponent(lblDevelopers6)))))
                         .addGap(33, 33, 33))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(107, 107, 107))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dpnDeskLayout.createSequentialGroup()
-                        .addComponent(btnStartQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(123, 123, 123))))
+                        .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnStartQuiz, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jblLinkVideo))
+                        .addGap(107, 107, 107))))
             .addGroup(dpnDeskLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(dpnDeskLayout.createSequentialGroup()
                     .addGap(174, 174, 174)
@@ -562,9 +632,9 @@ public class FrmMain extends javax.swing.JFrame {
 
         menuBar.add(menuArchive);
 
-        menuHelp.setForeground(new java.awt.Color(255, 255, 255));
-        menuHelp.setText("Ajuda");
-        menuBar.add(menuHelp);
+        menuInfo.setForeground(new java.awt.Color(255, 255, 255));
+        menuInfo.setText("Informações");
+        menuBar.add(menuInfo);
 
         setJMenuBar(menuBar);
 
@@ -601,17 +671,175 @@ public class FrmMain extends javax.swing.JFrame {
 
     private void lblProductBacklogMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProductBacklogMouseClicked
         PnlMessage pnlMessage = new PnlMessage();
-        pnlMessage.setDescription("ddhishdisdksn");
-        UIManager.put("OptionPane.minimumSize",new Dimension(300, 120));        
-        JOptionPane.showMessageDialog(null, pnlMessage, "Customized Message Dialog", JOptionPane.PLAIN_MESSAGE);
+        pnlMessage.setDescription("<html><body>Lista de requisitos priorizados pelo Product Owner. <br><br>O gerenciamento do Backlog do Produto inclui:<br>"
+                + "• Expressar claramente os itens do Backlog do Produto;<br>"
+                + "• Ordenar os itens do Backlog do Produto para alcançar melhor as metas e missões;<br>"
+                + "• Garantir o valor do trabalho realizado pelo Time de Desenvolvimento;<br>"
+                + "• Garantir que o Backlog do Produto seja visível, transparente, claro para todos, e mostrar o que o Time Scrum vai trabalhar a seguir; e,<br>"
+                + "• Garantir que o Time de Desenvolvimento entenda os itens do Backlog do Produto no nível necessário<br><br>"
+                + "O Product Owner pode fazer o trabalho acima, ou delegar para o Time de Desenvolvimento fazê-lo. No entanto, o Product Owner continua sendo o responsável pelos trabalhos.<br><br>"
+                + "O Product Owner é uma pessoa e não um comitê. O Product Owner pode representar o desejo de um comitê no Backlog do Produto, mas aqueles que quiserem uma alteração nas prioridades dos itens de Backlog devem convencer o Product Owner.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Backlog do produto:", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_lblProductBacklogMouseClicked
 
     private void lblProductOwnerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProductOwnerMouseClicked
         PnlMessage pnlMessage = new PnlMessage();
-        pnlMessage.setDescription("deu certoooo");
-        UIManager.put("OptionPane.minimumSize",new Dimension(300, 120));        
-        JOptionPane.showMessageDialog(null, pnlMessage, "Customized Message Dialog", JOptionPane.PLAIN_MESSAGE);
+        pnlMessage.setDescription("<html><body>O Product Owner, ou dono do produto, é o responsável por maximizar o valor do produto e do trabalho do Time de Desenvolvimento. Como isso é feito pode variar amplamente através das organizações, Times Scrum e indivíduos.<br><br>\n"
+                + "O Product Owner é a única pessoa responsável por gerenciar o Backlog do Produto.<br><br>\n"
+                + "Para que o Product Owner tenha sucesso, toda a organização deve respeitar as suas decisões. As decisões do Product Owner são visíveis no conteúdo e na priorização do Backlog do Produto.<br><br> \n"
+                + "Ninguém tem permissão para falar com o Time de Desenvolvimento sobre diferentes configurações de prioridade, e o Time de Desenvolvimento não tem permissão para agir sobre o que outras pessoas disserem.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Product Owner:", JOptionPane.PLAIN_MESSAGE);
     }//GEN-LAST:event_lblProductOwnerMouseClicked
+
+    private void jblLinkVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jblLinkVideoMouseClicked
+        try {
+            URI link = new URI("https://www.youtube.com/watch?v=XfvQWnRgxG0");
+            Desktop.getDesktop().browse(link);
+
+        } catch (Exception erro) {
+            System.out.println(erro);
+        }
+    }//GEN-LAST:event_jblLinkVideoMouseClicked
+
+    private void lblLampMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLampMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O que vamos fazer?<br>\n"
+                + "Tudo começa com a visão do produto. <br><br>\n"
+                + "O Product Owner é responsável por prover essa visão. <br><br>\n"
+                + "Descrever o que ele quer e aonde quer chegar. <br><br>\n"
+                + "4 passos para criar uma visão do produto: <br>\n"
+                + "•	Desenvolver o objetivo do produto ágil; <br>\n"
+                + "•	Criar um rascunho acerca da declaração de visão ágil; <br>\n"
+                + "•	Validar e revisar a declaração de visão ágil; <br>\n"
+                + "•	Finalizar sua declaração de visão ágil;<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Visão do Produto:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblLampMouseClicked
+
+    private void lblSprintPlanningMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSprintPlanningMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>•	Revisar o backlog;<br>"
+                + "•	Acordar próxima Sprint; <br>"
+                + "•	Definir objetivo da Sprint; <br>"
+                + "•	Definir/ estimar o backlog da Sprint.<br><br>"
+                + "O trabalho a ser realizado na Sprint é planejado na reunião de planejamento da Sprint. Este plano é criado com o trabalho colaborativo de todo o Time Scrum. <br><br>\n"
+                + "Reunião de planejamento da Sprint possui um time-box com no máximo oito horas para uma Sprint de um mês de duração.<br>Para Sprints menores, este evento é usualmente menor. O Scrum Master garante que o evento ocorra e que os participantes entendam seu propósito. O Scrum Master ensina o Time Scrum a manter-se dentro dos limites do time-box. <br><br>\n"
+                + "A reunião de planejamento da Sprint responde as seguintes questões: <br>\n"
+                + "•	O que pode ser entregue como resultado do incremento da próxima Sprint? <br>\n"
+                + "•	Como o trabalho necessário para entregar o incremento será realizado?<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Planejamento da Sprint:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblSprintPlanningMouseClicked
+
+    private void lblBacklogSprintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBacklogSprintMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O Backlog da Sprint é um conjunto de itens do Backlog do Produto selecionados para a Sprint, juntamente com o plano para entregar o incremento do produto e atingir o objetivo da Sprint.<br><br>\n"
+                + "O Backlog da Sprint é a previsão do Time de Desenvolvimento sobre qual funcionalidade estará no próximo incremento e sobre o trabalho necessário para entregar essa funcionalidade em um incremento “Pronto”. <br><br>\n"
+                + "O Backlog da Sprint é um plano com detalhes suficientes que as mudanças no progresso sejam entendidas durante a Reunião Diária. O Time de Desenvolvimento modifica o Backlog da Sprint ao longo de toda a Sprint, e o Backlog da Sprint vai surgindo durante a Sprint.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Backlog da Sprint:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblBacklogSprintMouseClicked
+
+    private void lblSprintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSprintMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O coração do Scrum é a Sprint, um time-boxed de um mês ou menos, durante o qual um “Pronto”, versão incremental potencialmente utilizável do produto, é criado.<br><br>\n"
+                + "Sprints tem durações coerentes em todo o esforço de desenvolvimento. Uma nova Sprint inicia imediatamente após a conclusão da Sprint anterior. <br><br>\n"
+                + "Durante a Sprint: <br><br>\n"
+                + "•	Não são feitas mudanças que possam por em perigo o objetivo da Sprint; <br>\n"
+                + "•	As metas de qualidade não diminuem; e, <br>\n"
+                + "•	O escopo pode ser clarificado e renegociado entre o Product Owner e o Time de Desenvolvimento quanto mais for aprendido.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Sprint:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblSprintMouseClicked
+
+    private void lblReviewSprintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblReviewSprintMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>A Revisão da Sprint é executada no final da Sprint para inspecionar o incremento e adaptar o Backlog do Produto se necessário. <br><br>\n"
+                + "Esta é uma reunião time-boxed de 4 horas de duração para uma Sprint de um mês. Para Sprints menores, este evento é usualmente menor. <br><br>\n"
+                + "A Reunião de Revisão inclui os seguintes elementos: <br><br>\n"
+                + "•	Os participantes incluem o Time Scrum e os Stakeholders chaves convidados pelo Product Owner; <br>\n"
+                + "•	O Product Owner esclarece quais itens do Backlog do Produto foram “Prontos” e quais não foram “Prontos”; <br>\n"
+                + "•	O Time de Desenvolvimento discute o que foi bem durante a Sprint, quais problemas ocorreram dentro da Sprint, e como estes problemas foram resolvidos; <br>\n"
+                + "•	O Time de Desenvolvimento demonstra o trabalho que está “Pronto” e responde as questões sobre o incremento; <br>\n"
+                + "•	O Product Owner discute o Backlog do Produto tal como está. Ele (ou ela) projeta as prováveis datas de conclusão baseado no progresso até a data (se necessário); <br>\n"
+                + "•	O grupo todo colabora sobre o que fazer a seguir, e é assim que a Reunião de Revisão da Sprint fornece valiosas entradas para a Reunião de Planejamento da próxima Sprint; <br>\n"
+                + "•	Análise de como o mercado ou o uso potencial do produto pode ter mudado e o que é a coisa mais importante a se fazer a seguir; e, <br>\n"
+                + "•	Análise da linha do tempo, orçamento, potenciais capacidades, e mercado para a próxima versão esperada do produto.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 600));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Revisão da Sprint:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblReviewSprintMouseClicked
+
+    private void lblRetrospectiveSprintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRetrospectiveSprintMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>A Retrospectiva da Sprint é uma oportunidade para o Time Scrum inspecionar a si próprio e criar um plano para melhorias a serem aplicadas na próxima Sprint. <br><br>\n"
+                + "A Retrospectiva da Sprint ocorre depois da Revisão da Sprint e antes da reunião de planejamento da próxima Sprint. Esta é uma reunião time-boxed de três horas para uma Sprint de um mês. Para Sprint menores, este evento é usualmente menor. <br><br>\n"
+                + "O propósito da Retrospectiva da Sprint é: <br><br>\n"
+                + "• Inspecionar como a última Sprint foi em relação às pessoas, aos relacionamentos, aos processos e às ferramentas; <br>\n"
+                + "• Identificar e ordenar os principais itens que foram bem e as potenciais melhorias; e, <br>\n"
+                + "• Criar um plano para implementar melhorias no modo que o Time Scrum faz seu trabalho;<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Retrospectiva da Sprint:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblRetrospectiveSprintMouseClicked
+
+    private void lblProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProductMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O incremento é a soma de todos os itens do Backlog do Produto completados durante a Sprint e o valor dos incrementos de todas as Sprints anteriores. <br><br> \n"
+                + "Ao final da Sprint um novo incremento deve estar “Pronto”, o que significa que deve estar na condição utilizável e atender a definição de “Pronto” do Time Scrum. <br><br>\n"
+                + "Este deve estar na condição utilizável independente do Product Owner decidir por liberá-lo realmente ou não. <br><br><br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Incremento:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblProductMouseClicked
+
+    private void lblProductOwner6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblProductOwner6MouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O Product Owner, ou dono do produto, é o responsável por maximizar o valor do produto e do trabalho do Time de Desenvolvimento. Como isso é feito pode variar amplamente através das organizações, Times Scrum e indivíduos.<br><br>\n"
+                + "O Product Owner é a única pessoa responsável por gerenciar o Backlog do Produto.<br><br>\n"
+                + "Para que o Product Owner tenha sucesso, toda a organização deve respeitar as suas decisões. As decisões do Product Owner são visíveis no conteúdo e na priorização do Backlog do Produto.<br><br> \n"
+                + "Ninguém tem permissão para falar com o Time de Desenvolvimento sobre diferentes configurações de prioridade, e o Time de Desenvolvimento não tem permissão para agir sobre o que outras pessoas disserem.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Product Owner:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblProductOwner6MouseClicked
+
+    private void lblScrumMaster5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblScrumMaster5MouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>•	é responsável por garantir que o Scrum seja entendido e aplicado. <br>\n"
+                + "•	faz isso para garantir que o Time Scrum adere à teoria, práticas e regras do Scrum. <br>\n"
+                + "•	é um servo-líder para o Time Scrum. <br>\n"
+                + "•	ajuda aqueles que estão fora do Time Scrum a entender quais as suas interações com o Time Scrum são úteis e quais não são. <br>\n"
+                + "•	ajuda todos a mudarem estas interações para maximizar o valor criado pelo Time Scrum.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Scrum Master:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblScrumMaster5MouseClicked
+
+    private void lblDevelopers6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDevelopers6MouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>O Time de Desenvolvimento consiste de profissionais que realizam o trabalho de entregar uma versão usável que potencialmente incrementa o produto “Pronto” ao final de cada Sprint. <br><br>\n"
+                + "Somente integrantes do Time de Desenvolvimento criam incrementos. <br><br>\n"
+                + "Os Times de Desenvolvimento são estruturados e autorizados pela organização para organizar e gerenciar seu próprio trabalho. <br><br>\n"
+                + "Os Times de Desenvolvimento tem as seguintes características: <br><br>\n"
+                + "• Eles são auto-organizados. Ninguém (nem mesmo o Scrum Master) diz ao Time de Desenvolvimento como transformar o Backlog do Produto em incrementos de funcionalidades potencialmente utilizáveis; <br>\n"
+                + "• Times de Desenvolvimento são multifuncionais, possuindo todas as habilidades necessárias, enquanto equipe, para criar o incremento do Produto. <br>\n"
+                + "• O Scrum não reconhece títulos para os integrantes do Time de Desenvolvimento que não seja o Desenvolvedor, independentemente do trabalho que está sendo realizado pela pessoa; Não há exceções para esta regra. <br>\n"
+                + "• Individualmente os integrantes do Time de Desenvolvimento podem ter habilidades especializadas e área de especialização, mas a responsabilidade pertence ao Time de Desenvolvimento como um todo; e, <br>\n"
+                + "• Times de Desenvolvimento não contém sub-times dedicados a domínios específicos de conhecimento, tais como teste ou análise de negócios. <br><br>\n"
+                + "O tamanho ideal do Time de Desenvolvimento é pequeno o suficiente para se manter ágil e grande o suficiente para completar uma parcela significativa do trabalho dentro dos limites da Sprint.<br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 600));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Time de Desenvolvimento:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblDevelopers6MouseClicked
+
+    private void lblDailyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDailyMouseClicked
+        PnlMessage pnlMessage = new PnlMessage();
+        pnlMessage.setDescription("<html><body>A Reunião Diária do Scrum é um evento time-boxed de 15 minutos, para que o Time de Desenvolvimento possa sincronizar as atividades e criar um plano para as próximas 24 horas. <br><br>\n"
+                + "Esta reunião é feita para inspecionar o trabalho desde a última Reunião Diária, e prever o trabalho que deverá ser feito antes da próxima Reunião Diária. <br><br>\n"
+                + "Durante a reunião os membros do Time de Desenvolvimento esclarecem: <br><br>\n"
+                + "•	O que eu fiz ontem que ajudou o Time de Desenvolvimento a atender a meta da Sprint? <br>\n"
+                + "•	O que eu farei hoje para ajudar o Time de Desenvolvimento atender a meta da Sprint? <br>\n"
+                + "•	Eu vejo algum obstáculo que impeça a mim ou o Time de Desenvolvimento no atendimento da meta da Sprint? <br><br&gtcom HTML!</body></html>");
+        UIManager.put("OptionPane.minimumSize", new Dimension(500, 400));
+        JOptionPane.showMessageDialog(null, pnlMessage, "Reunião Diária:", JOptionPane.PLAIN_MESSAGE);
+    }//GEN-LAST:event_lblDailyMouseClicked
 
     /**
      * @param args the command line arguments
@@ -654,10 +882,10 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JButton btnStartQuiz;
     private javax.swing.JDesktopPane dpnDesk;
     private javax.swing.JFrame jFrame1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jblLinkVideo;
     private javax.swing.JLabel lblArrow1;
     private javax.swing.JLabel lblArrow2;
     private javax.swing.JLabel lblArrow3;
@@ -697,7 +925,7 @@ public class FrmMain extends javax.swing.JFrame {
     private javax.swing.JLabel lblSprintTxt;
     private javax.swing.JMenu menuArchive;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu menuHelp;
+    private javax.swing.JMenu menuInfo;
     private javax.swing.JMenuItem mnuArchiveRegistrationQuiz;
     // End of variables declaration//GEN-END:variables
 

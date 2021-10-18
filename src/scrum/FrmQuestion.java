@@ -679,13 +679,13 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
     }
 
     private void fillTable() {
-        String titles[] = {"ID", "Questão", "Resposta"};
+        String titles[] = {"Questão", "Resposta", "Nível"};
         String[] register = new String[3];
         qTable = new DefaultTableModel(null, titles);
         for (Question question : questions) {
-            register[0] = question.getId();
-            register[1] = question.getQuestion();
-            register[2] = question.getCorrectAnswer();
+            register[0] = question.getQuestion();
+            register[1] = question.getCorrectAnswer();
+            register[2] = question.getLevel().getLevelUI();
             qTable.addRow(register);
         }
         tblQuestions.setModel(qTable);
