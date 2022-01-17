@@ -24,7 +24,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
     private final QuestionDao questionDao = new QuestionDao();
     private DefaultTableModel qTable;
 
-    public FrmQuestion() {
+    public FrmQuestion() {       
         //Inicializa os components do swing
         initComponents();
 
@@ -55,7 +55,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
             }
         });
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,9 +136,12 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
         txtOptionA.setCaretColor(new java.awt.Color(177, 235, 75));
         txtOptionA.setEnabled(false);
 
+        btnLast.setBackground(new java.awt.Color(50, 50, 50));
         btnLast.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-final-file.png"))); // NOI18N
         btnLast.setToolTipText("Fim");
+        btnLast.setBorder(null);
+        btnLast.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLastActionPerformed(evt);
@@ -152,47 +155,62 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
         lblOpcaoB.setMinimumSize(new java.awt.Dimension(55, 15));
         lblOpcaoB.setPreferredSize(new java.awt.Dimension(55, 15));
 
+        btnPrevious.setBackground(new java.awt.Color(50, 50, 50));
         btnPrevious.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnPrevious.setForeground(new java.awt.Color(240, 240, 240));
         btnPrevious.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-up-file.png"))); // NOI18N
         btnPrevious.setToolTipText("Voltar");
+        btnPrevious.setBorder(null);
+        btnPrevious.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPreviousActionPerformed(evt);
             }
         });
 
+        btnNext.setBackground(new java.awt.Color(50, 50, 50));
         btnNext.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-down-file.png"))); // NOI18N
         btnNext.setToolTipText("Próximo");
+        btnNext.setBorder(null);
+        btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
 
+        btnFirst.setBackground(new java.awt.Color(50, 50, 50));
         btnFirst.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnFirst.setForeground(new java.awt.Color(240, 240, 240));
         btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-beg-file.png"))); // NOI18N
         btnFirst.setToolTipText("Início");
-        btnFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnFirst.setBorder(null);
+        btnFirst.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFirstActionPerformed(evt);
             }
         });
 
+        btnNew.setBackground(new java.awt.Color(50, 50, 50));
         btnNew.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-add-file.png"))); // NOI18N
         btnNew.setToolTipText("Novo");
+        btnNew.setBorder(null);
+        btnNew.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
             }
         });
 
+        btnSave.setBackground(new java.awt.Color(50, 50, 50));
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-save-file.png"))); // NOI18N
         btnSave.setToolTipText("Salvar");
+        btnSave.setBorder(null);
+        btnSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSave.setEnabled(false);
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -200,36 +218,48 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
             }
         });
 
+        btnEdit.setBackground(new java.awt.Color(50, 50, 50));
         btnEdit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-edit-file.png"))); // NOI18N
         btnEdit.setToolTipText("Editar");
+        btnEdit.setBorder(null);
+        btnEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(50, 50, 50));
         btnDelete.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-del-file.png"))); // NOI18N
         btnDelete.setToolTipText("Excluir");
+        btnDelete.setBorder(null);
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
+        btnCancel.setBackground(new java.awt.Color(50, 50, 50));
         btnCancel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-cancel-file.png"))); // NOI18N
         btnCancel.setToolTipText("Cancelar");
+        btnCancel.setBorder(null);
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
             }
         });
 
+        btnSearch.setBackground(new java.awt.Color(50, 50, 50));
         btnSearch.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/img-search-file.png"))); // NOI18N
         btnSearch.setToolTipText("Pesquisar");
+        btnSearch.setBorder(null);
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
@@ -353,7 +383,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
                 .addGap(153, 153, 153))
             .addGroup(layout.createSequentialGroup()
                 .addGap(182, 182, 182)
-                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -396,7 +426,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtOptionC, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblOpcaoC, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                    .addComponent(lblOpcaoC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtOptionD, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,15 +442,16 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPrevious, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnFirst, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnPrevious, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
@@ -543,7 +574,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
         btnEdit.setEnabled(true);
         btnSave.setEnabled(false);
         btnDelete.setEnabled(true);
-        btnCancel.setEnabled(false);
+        btnCancel.setEnabled(true);
         btnSearch.setEnabled(true);
     }//GEN-LAST:event_btnSaveActionPerformed
 
@@ -557,12 +588,14 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
         btnEdit.setEnabled(true);
         btnSave.setEnabled(false);
         btnDelete.setEnabled(true);
-        btnCancel.setEnabled(false);
+        btnCancel.setEnabled(true);
         btnSearch.setEnabled(true);
         //Limpar caixas de textos
         clearForm();
         //Desabilitar caixas de textos
         disableForm();
+        //Recarrega as questões do arquivo
+        loadQuestions();
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
@@ -577,7 +610,7 @@ public class FrmQuestion extends javax.swing.JInternalFrame {
         btnDelete.setEnabled(false);
         btnCancel.setEnabled(true);
         btnSearch.setEnabled(false);
-        //Caixa de textos
+        //Habilita Caixa de textos
         enableForm();
         txtQuestion.requestFocus();
     }//GEN-LAST:event_btnEditActionPerformed
